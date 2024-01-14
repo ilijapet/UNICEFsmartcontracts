@@ -15,7 +15,7 @@ contract Donation is Ownable {
     }
 
     function donate() public payable {
-        userDonations[msg.sender] = msg.value;
+        userDonations[msg.sender] += msg.value;
         emit DonationEvent(msg.sender, msg.value);
     }
 
